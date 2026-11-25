@@ -1,4 +1,4 @@
-# ros2-campus-shuttle
+# ros2-diffdrive-nav-sim
 
 A ROS 2 autonomy stack for a differential-drive campus shuttle, in simulation:
 ROS 2 Jazzy, modern Gazebo (gz-sim Harmonic), Nav2, SLAM Toolbox,
@@ -349,8 +349,11 @@ Nothing in a build catches that, so it is checked directly.
 
 Stated plainly, because they bound what the numbers mean.
 
-- **This is simulation only.** No hardware bringup, no Jetson Orin, no physical
-  emergency stop. The BEng project this rebuilds ran on hardware; this does not.
+- **This is simulation only.** No hardware bringup and no physical emergency
+  stop. It is not a rebuild of my BEng final-year project: that was the
+  [EcoSmart Shuttle](https://github.com/CGainsWorks/ecosmart-shuttle),
+  an ESP32-S3 line-following robot built and measured on real hardware. This
+  repository takes the same campus-shuttle idea to a full ROS 2 navigation stack.
 - **The safety layer is software.** It stops the simulated base on an e-stop or
   a stale command but it shares the failure modes of the stack it guards: if
   the gate itself dies, the simulated base keeps its last command. A real base
